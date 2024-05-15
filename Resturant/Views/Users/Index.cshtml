@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Resturant.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    body {
+        background-image: url("/images/background1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<h1>Our Customers</h1>
+
+<table class="table" style="color: white;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

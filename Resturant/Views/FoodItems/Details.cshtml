@@ -1,0 +1,55 @@
+﻿@model Resturant.Models.FoodItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background-image: url("/images/background2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<div>
+    <h4>FoodItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class = "col-sm-2">
+           
+        </dt>
+        <td>
+            <img src="~/images/@Model.Foodpic" alt=" food_pic here" style="border-radius:50%; width:70px;height :70px">
+
+        </td>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.FoodItemId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Resturant.Models.Order>
+
+@{
+    ViewData["Title"] = "Cart";
+}
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<style>
+    body {
+        background-image: url("/images/background1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<h1>Cart</h1>
+
+<table class="table" style="color: white;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodItem.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderdate)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FoodItem.Name)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderdate)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Resturant.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background-image: url("/images/background1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<table class="table" style="color: white;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodItem.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            
+           
+        </tr>
+}
+    </tbody>
+</table>

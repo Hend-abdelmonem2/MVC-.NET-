@@ -1,0 +1,59 @@
+﻿@model Resturant.Models.FoodItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    body {
+        background-image: url("/images/background2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FoodItemId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.FoodItemId)
+    </dd>
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Quantity)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Quantity)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Price)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Price)
+    </dd>
+    <dd>
+        <img src="~/images/@Model.Foodpic" height="150" />
+        
+
+    </dd>
+</dl>
+
+<div class="form-group">
+</div>
+<form asp-action="Create" method="post">
+<input type="hidden" name="fooditemId" value=@Model.FoodItemId />
+<div class="form-group">
+    <label for="quantity" class="control-label">Quantity</label>
+    <input name="quantity" class="form-control" />
+
+</div>
+<input type="submit" value="Buy" class="btn btn-primary" />
+</form>
+<a asp-controller="FoodItems" asp-action="Menu">Back to Menu</a>

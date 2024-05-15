@@ -1,0 +1,261 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.introduction {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .introduction img {
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        z-index: -2;
+    }
+
+.introduction-content {
+    width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heading {
+    font-size: 100px;
+    font-family: 'Kaushan Script', cursive;
+    color: #fff;
+}
+
+    .heading span:nth-child(2) {
+        color: #f40000;
+    }
+
+.desc {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+    font-size: 17px;
+    font-family: 'Assistant', sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    background-color: #f40000;
+    padding: 17px 45px;
+    margin-top: 30px;
+    border-radius: 40px;
+    transition: all 0.5s;
+}
+
+    .btn:hover {
+        color: #f40000;
+        background-color: #fff;
+    }
+
+.menu-container {
+    width: 100%;
+    height: 180vh;
+    background-image: url("images/menu-bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-heading1 {
+    color: #F40000;
+    font-family: "Kaushan Script", Sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.menu-heading2 {
+    color: blueviolet;
+    font-family: "Assistant", Sans-serif;
+    font-size: 46px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 100px;
+}
+
+.menu {
+    width: 60%;
+    height: 130vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-content {
+    width: 80%;
+    height: 25%;
+    padding: 2%;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.food-content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.food-name {
+    margin-bottom: 12px;
+    color: #282828;
+    font-family: "Assistant", Sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.food-description {
+    color: #797979;
+    font-family: "Assistant", Sans-serif;
+    font-size: 17px;
+}
+
+.food-cost {
+    color: #f40000;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Assistant", Sans-serif;
+    margin-top: 12px;
+}
+
+.offers {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding: 6%;
+}
+
+.offers-heading1 {
+    color: #F40000;
+    font-family: "Kaushan Script", Sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.offers-heading2 {
+    color: #282828;
+    font-family: "Assistant", Sans-serif;
+    font-size: 46px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+}
+
+.discount-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.discount-card {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.offer-name {
+    color: #FFFFFF;
+    margin-top: 50px;
+    font-family: "Assistant", Sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.offer-description {
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: #797979;
+    font-family: "Assistant", Sans-serif;
+    font-size: 17px;
+    background-color: #F8F8F8;
+    border-radius: 6px;
+}
+
+.off {
+    font-family: "Assistant", Sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #f40000;
+    text-align: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* set the background color to transparent black */
+    padding: 20px;
+    border-radius: 10px;
+}

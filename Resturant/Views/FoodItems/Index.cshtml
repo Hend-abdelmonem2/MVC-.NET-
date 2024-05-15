@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Resturant.Models.FoodItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+     body {
+         background-image: url("/images/background1.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+     }
+</style>
+
+<table class="table" style=" color: #FFFFFF;border: none;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foodpic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+           
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td>
+                    <img src="~/images/@item.Foodpic" alt=" food_pic here" style="border-radius:50%; width:70px;height :70px">
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FoodItemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FoodItemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FoodItemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-controller="FoodItems" asp-action="Create" class="btn btn-primary">Add New Food Item</a>

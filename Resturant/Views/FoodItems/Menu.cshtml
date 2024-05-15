@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Resturant.Models.FoodItem>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<style>
+    body {
+        background-image: url("/images/background1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<table class="table" style=" color: #FFFFFF;border: none;">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>image</th>
+            <th>Price</th>
+
+            <th style="border:none"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+
+                <td>
+                    <img src="~/images/@item.Foodpic" alt=" food_pic here" style="border-radius:50%; width:70px;height :70px">
+
+                </td>
+                <td>@item.Price</td>
+                <td style="border:none">
+                    <a asp-action="Create" asp-controller="Orders" asp-route-id="@item.FoodItemId" class="btn btn-primary"
+                       style=" margin-top: 0px; margin-left:30px;">AddToCart </a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
